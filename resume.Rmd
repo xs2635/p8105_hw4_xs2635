@@ -1,0 +1,41 @@
+---
+title: "Resume"
+---
+
+
+## Education
+
+- MS in Biostatistics, Columbia University
+- BS in Mathematics, Santa Clara University
+
+## Project
+
+**PDE Solutions for Financial Instrument Modeling**  
+*Course: Partial Differential Equations*
+
+- Applied finite difference methods to approximate solutions to the heat
+  equation for a financial model driven by Brownian motion.
+- Discretized the spatial and temporal domains with numerical stability
+  in mind and used matrix exponentiation to track how the probability
+  density evolved over time.
+- Compared numerical results with closed-form solutions and checked
+  convergence as the step sizes decreased.
+  
+## Experience
+
+**Credit Risk Analyst Intern | Industrial Bank**  
+*Wuxi, Jiangsu, China | July–September 2025*
+
+- Developed credit risk models to estimate borrowers' probabilities of default
+  and inform credit limit decisions.
+- Prepared financial datasets for modeling through feature engineering,
+  outlier detection, and missing-value imputation.
+- Compared logistic regression, random forest, and XGBoost models using
+  cross-validation and stress-tested model performance under different
+  economic scenarios.
+- Used K-means clustering to group customers by risk profile and support
+  credit limit strategies.
+- Collaborated with IT teams on integrating risk models into monitoring
+  systems and communicated model findings to senior stakeholders through
+  reports and presentations.
+

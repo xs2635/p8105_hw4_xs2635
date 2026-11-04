@@ -1,0 +1,21 @@
+name: "xiaobo-shen"
+output_dir: "."
+
+navbar:
+  title: "Xiaobo Shen"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "Resume"
+      href: resume.html
+  right:
+    - icon: fa-envelope fa-lg
+      href: "mailto:xs2635@cumc.columbia.edu"
+    - icon: fa-github fa-lg
+      href: "https://github.com/xs2635"
+    - text: "LinkedIn"
+      href: "https://www.linkedin.com/in/lexi-shen-1ab21738b/"
+
+output:
+  html_document:
+    theme: cerulean

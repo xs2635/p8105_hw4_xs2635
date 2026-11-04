@@ -7,7 +7,11 @@ navbar:
     - text: "Home"
       href: index.html
     - text: "Resume"
-      href: resume.html
+      href: resume.html   
+    - text: "Dashboard"
+      href: dashboard.html
+      
+      
   right:
     - icon: fa-envelope fa-lg
       href: "mailto:xs2635@cumc.columbia.edu"
@@ -15,6 +19,7 @@ navbar:
       href: "https://github.com/xs2635"
     - text: "LinkedIn"
       href: "https://www.linkedin.com/in/lexi-shen-1ab21738b/"
+
 
 output:
   html_document:

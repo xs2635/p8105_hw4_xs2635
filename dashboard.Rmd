@@ -1,0 +1,74 @@
+---
+title: "New York Weather Dashboard"
+output:
+  flexdashboard::flex_dashboard:
+    orientation: columns
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(plotly)
+
+weather_2010 = p8105.datasets::ny_noaa |>
+  filter(
+    date >= as.Date("2010-01-01"),
+    date < as.Date("2011-01-01")
+  ) |>
+  mutate(
+    tmin_c = as.numeric(tmin) / 10,
+    tmax_c = as.numeric(tmax) / 10
+  ) |>
+  filter(!is.na(tmin_c), !is.na(tmax_c))
+
+set.seed(8105)
+weather_sample = weather_2010 |>
+  slice_sample(n = 1000)
+```
+
+Column
+-----------------------------------------------------------------------
+
+### Daily Minimum and Maximum Temperatures
+
+```{r temperature-scatter, echo=FALSE}
+weather_sample |>
+  plot_ly(
+    x = ~tmin_c,
+    y = ~tmax_c,
+    type = "scatter",
+    mode = "markers"
+  ) |>
+  layout(
+    xaxis = list(title = "Daily minimum temperature (°C)"),
+    yaxis = list(title = "Daily maximum temperature (°C)")
+  )
+```
+
+Column
+-----------------------------------------------------------------------
+
+### Daily Maximum Temperatures by Month (2010 Sample)
+
+```{r temperature-box, echo=FALSE}
+weather_sample |>
+  mutate(month = format(date, "%m")) |>
+  plot_ly(x = ~month, y = ~tmax_c, type = "box") |>
+  layout(
+    xaxis = list(title = "Month", type = "category", categoryorder = "category ascending"),
+    yaxis = list(title = "Daily maximum temperature (°C)")
+  )
+```
+
+### Mean Daily Maximum Temperature by Month (2010)
+
+```{r temperature-bar, echo=FALSE}
+weather_2010 |>
+  mutate(month = format(date, "%m")) |>
+  group_by(month) |>
+  summarize(mean_tmax_c = mean(tmax_c)) |>
+  plot_ly(x = ~month, y = ~mean_tmax_c, type = "bar") |>
+  layout(
+    xaxis = list(title = "Month", type = "category", categoryorder = "category ascending"),
+    yaxis = list(title = "Mean daily maximum temperature (°C)")
+  )
+```
